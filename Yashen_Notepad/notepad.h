@@ -3,12 +3,12 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
-#include<QDebug>
+#include<QDebug>            //for testing outputs
 #include <QCloseEvent>
 #include<QFileDialog>
 #include <QFontDialog>
 #include <QSaveFile>
-#include <QPrinter>
+#include <QPrinter>         //to setup printer function
 #include <QPrintDialog>
 
 QT_BEGIN_NAMESPACE
@@ -21,7 +21,7 @@ class Notepad : public QMainWindow
 
 public:
     Notepad(QWidget *parent = nullptr);
-    ~Notepad();
+    ~Notepad();                         //destructor
 
    void closeEvent(QCloseEvent *event);
    bool getIsBold() const;
@@ -29,6 +29,9 @@ public:
 
    bool getIsUnderline() const;
    void setIsUnderline(bool value);
+
+   bool getIsItalic() const;
+   void setIsItalic(bool value);
 
 private slots:
    void on_actionOpen_triggered();
@@ -54,10 +57,10 @@ private slots:
 
     void on_actionExit_triggered();
 
-
-
     void setFontUnderline(bool underline);
+
     void setFontBold(bool bold);
+
     void on_actionBold_triggered();
 
     void on_actionUnderline_triggered();
@@ -70,14 +73,18 @@ private slots:
 
     void on_actionAbout_triggered();
 
+    void on_actionItalic_triggered();
+
+    void setFontItalic(bool italic);
 private:
     Ui::Notepad *ui;
     QString currentFile;
 
     bool isBold = false;
     bool isUnderline = false;
-    bool maybeSave();
-    bool saveFile(const QString &fileName);
+    bool isItalic=false;
+    bool maybeSave();                     //Function asks to save your unsaved work on exit event if notepad was modified
+    bool saveFile(const QString &fileName); //Saves the text file
     void setCurrentFile(const QString &fileName);
 
 };

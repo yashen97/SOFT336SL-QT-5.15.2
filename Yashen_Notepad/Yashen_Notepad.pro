@@ -28,3 +28,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     Resources.qrc
+
+
+
+RC_ICONS = icons\favico.ico

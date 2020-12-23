@@ -18,5 +18,9 @@
         <file>Icons/Turtle.png</file>
         <file>Icons/under.png</file>
         <file>Icons/undo.png</file>
+        <file>Icons/about.png</file>
+        <file>Icons/fontsel.png</file>
+        <file>Icons/common.ico</file>
+        <file>Icons/favico.ico</file>
     </qresource>
 </RCC>

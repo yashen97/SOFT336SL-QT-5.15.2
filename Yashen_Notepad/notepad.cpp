@@ -12,6 +12,7 @@ Notepad::Notepad(QWidget *parent)
     ui->textEdit->setFontPointSize(size);
     //connect(ui->actionUnderline, &QAction::triggered, this, &Notepad::setFontUnderline);
     //connect(ui->actionBold, &QAction::triggered,this,&Notepad::setFontBold);
+
 }
 
 Notepad::~Notepad()
@@ -250,6 +251,14 @@ void Notepad::setFontUnderline(bool underline)
 
 }
 
+void Notepad::setFontItalic(bool italic)
+{
+
+            italic ?  ui->textEdit->setFontItalic(QFont::StyleItalic) :
+                      ui->textEdit->setFontItalic(QFont::StyleNormal);
+
+}
+
 void Notepad::setFontBold(bool bold)
 {
    bold ?  ui->textEdit->setFontWeight(QFont::Bold) :
@@ -345,4 +354,27 @@ void Notepad::on_actionAbout_triggered()
             "<br>"
             "github repo: <a href=https://github.com/yashen97/SOFT336SL-QT-5.15.2><br> "
             "github.com/yashen97/SOFT336SL-QT-5.15.2"));
+}
+
+void Notepad::on_actionItalic_triggered()
+{
+    bool isItalic = Notepad::getIsItalic();
+    if(!isItalic){
+        Notepad::setFontItalic(true);
+        Notepad::setIsItalic(true);
+    }
+    else{
+        Notepad::setFontItalic(false);
+        Notepad::setIsItalic(false);
+    }
+}
+
+bool Notepad::getIsItalic() const
+{
+    return isItalic;
+}
+
+void Notepad::setIsItalic(bool value)
+{
+    isItalic = value;
 }
