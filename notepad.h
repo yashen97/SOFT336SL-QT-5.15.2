@@ -36,47 +36,48 @@ public:
 
 private slots:
     void on_actionOpen_triggered();
+    void on_actionSave_triggered();
+    void on_actionSave_as_triggered();  //File list actions
+    void on_actionNew_triggered();
+    void on_actionExit_triggered();
+    void on_actionPrint_triggered();
+
 
     void on_textEdit_textChanged();
+    void documentModified(bool x);       //custom made functions
 
-    void documentModified(bool x);
 
-    void on_actionSave_triggered();
 
-    void on_actionSave_as_triggered();
+
 
     void on_actionCut_triggered();
 
-
     void on_actionCopy_triggered();
 
-    void on_actionPaste_triggered();
+    void on_actionPaste_triggered();     //Edit list
 
     void on_actionUndo_triggered();
 
     void on_actionRedo_triggered();
 
-    void on_actionExit_triggered();
+
 
     void setFontUnderline(bool underline);
-
     void setFontBold(bool bold);
 
     void on_actionBold_triggered();
 
-    void on_actionUnderline_triggered();
+    void on_actionUnderline_triggered();     //Format list
 
     void on_actionFont_triggered();
 
-    void on_actionNew_triggered();
-
-    void on_actionPrint_triggered();
-
-    void on_actionAbout_triggered();
-
     void on_actionItalic_triggered();
-
     void setFontItalic(bool italic);
+
+
+    void on_actionAbout_triggered();  //about
+
+
 private:
     Ui::Notepad *ui;
     QString currentFile;

@@ -8,7 +8,7 @@ Notepad::Notepad(QWidget *parent)
 {
     const int size=13;
     ui->setupUi(this);
-    this->setCentralWidget(ui->textEdit);
+    this->setCentralWidget(ui->textEdit);    //set central wiget
     ui->textEdit->setFontPointSize(size);
 
 }
@@ -211,7 +211,7 @@ void Notepad::setFontUnderline(bool underline)
 void Notepad::setFontItalic(bool italic)
 {
 
-        italic ?  ui->textEdit->setFontItalic(QFont::StyleItalic) :
+    italic ?  ui->textEdit->setFontItalic(QFont::StyleItalic) :
                   ui->textEdit->setFontItalic(QFont::StyleNormal);
 
 }
